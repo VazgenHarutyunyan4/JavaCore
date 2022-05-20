@@ -28,6 +28,7 @@ public class ArrayUtil {
         System.out.print("even are ");
         for (int x : array) {
             if (x % 2 == 0) {
+
                 System.out.print(x + ", ");
             }
         }

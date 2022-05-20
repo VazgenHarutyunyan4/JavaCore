@@ -1,4 +1,4 @@
-package homework;
+package homework.figure;
 
 public class Figure2 {
     public static void main(String[] args) {
