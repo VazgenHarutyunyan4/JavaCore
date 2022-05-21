@@ -14,34 +14,35 @@ public class CharArrayExample {
 
 
         char[] chars2 = {'j', 'a', 'v', 'e', 'l', 'o', 'v', 'e'};
-        for (int i = 0; i < chars2.length; i++) {
 
-        }
         System.out.print(chars2[chars2.length / 2 - 1] + " and ");
         System.out.println(chars2[chars2.length / 2]);
 
 
         char[] chars3 = {'j', 'a', 'v', 'e', 'l', 'o', 'l', 'y'};
-        boolean x = ((chars3[chars3.length - 1] + chars3[chars3.length - 2]) == ('l' + 'y'));
-        if (x) {
-            System.out.println(true);
+        boolean ly = false;
+        for (int i = 0; i < chars3.length; i++) {
+            if (chars3[i] == chars3[chars3.length - 2] && chars3[i + 1] == chars3[chars3.length - 1]) {
+                ly = true;
+            }
+
         }
-        if (!x) {
-            System.out.println(false);
-        }
+        System.out.println(ly);
 
 
         char[] bobArray = {'b', 'a', 'b', 'o', 'l', 'a'};
         for (int i = 0; i < bobArray.length; i++) {
-            if (bobArray[i] == 'b' && bobArray[i + 2] == 'b') {
-                boolean bob = true;
-                System.out.println(bob);
+            if ((i + 2) < bobArray.length) {
+                if (bobArray[i] == 'b' && bobArray[i + 2] == 'b') {
+                    boolean bob = true;
+                    System.out.println(bob);
+                }
             }
         }
 
-        char[] text = {' ',' ','b','a','r','e','v',' ',' '};
+        char[] text = {' ', ' ', 'b', 'a', 'r', 'e', 'v', ' ', ' '};
         for (int i = 0; i < text.length; i++) {
-            if (text[i] !=' '){
+            if (text[i] != ' ') {
                 System.out.print(text[i]);
             }
 
