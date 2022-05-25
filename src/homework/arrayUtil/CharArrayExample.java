@@ -44,6 +44,8 @@ public class CharArrayExample {
         for (int i = 0; i < text.length; i++) {
             if (text[i] != ' ') {
                 System.out.print(text[i]);
+
+
             }
 
         }
