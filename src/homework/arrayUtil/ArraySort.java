@@ -1,3 +1,4 @@
+/*
 package homework.arrayUtil;
 
 public class ArraySort {
@@ -33,3 +34,4 @@ public class ArraySort {
     }
 
 }
+*/

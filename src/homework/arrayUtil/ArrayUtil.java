@@ -1,75 +1,141 @@
 package homework.arrayUtil;
 
 public class ArrayUtil {
-    public static void main(String[] args) {
-        int[] array = {17, 21, -4, -1, 0, 1, 4, 7, 10, 13};
-
+    void allElements(int[] array) {
         //print array's all elements
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ",");
         }
-        System.out.println();
+    }
 
-        //print array's max and min
+
+    int max(int[] array) {
         int max = array[0];
-        int min = array[0];
-        for (int i = 0; i <= 9; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
             }
+        }
+
+
+        return max;
+    }
+
+    int min(int[] array) {
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
             if (array[i] < min) {
                 min = array[i];
             }
         }
-        System.out.println("max is " + max);
-        System.out.println("min is " + min);
 
-        //print array's even elements
-        System.out.print("even are ");
-        for (int x : array) {
-            if (x % 2 == 0) {
+        return min;
 
-                System.out.print(x + ", ");
-            }
-        }
+    }
 
-        //print array's odd elements
-        System.out.println();
-        System.out.print("odds are ");
-        for (int x : array) {
-            if (x % 2 != 0) {
-                System.out.print(x + ", ");
-            }
-        }
-        System.out.println();
 
-        //print quantity of evens
-        System.out.print("Evens length = ");
-        int evensLen = 0;
+    //print array's even elements
+    void even(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                evensLen++;
-            }
+            if (array[i] % 2 == 0)
+
+
+                System.out.print(array[i] + ",");
         }
-        //print quantity of odds
-        System.out.println(evensLen);
-        System.out.print("Odds length = ");
-        int oddsLen = 0;
+    }
+
+    void odd(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 != 0) {
-                oddsLen++;
+                System.out.print(array[i] + ",");
             }
         }
+        System.out.println();
 
-        System.out.println(oddsLen);
+    }
 
+    void evenQaunt(int[] array) {
+        System.out.print("evens quantity are ");
+        int count = 0;
+        for (int x : array) {
+            if (x % 2 == 0) {
+                count++;
+
+            }
+        }
+        System.out.print(count + ", ");
+        System.out.println();
+    }
+
+
+    void oddQaunt(int[] array) {
+        System.out.print("odds quantity are ");
+        int count = 0;
+        for (int x : array) {
+            if (x % 2 != 0) {
+                count++;
+
+            }
+        }
+        System.out.print(count + ", ");
+
+    }
+
+
+    double sum(int[] array) {
         //print array element's average sum and sum
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
-        System.out.println("Average sum = " + sum / array.length);
         System.out.println("Elements sum = " + sum);
-    }
-}
 
+        return sum;
+    }
+
+    //print array element's average sum
+    double averageSum(int[] array) {
+        double sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        System.out.println("Elements sum = " + sum/ array.length);
+
+        return sum/ array.length;
+    }
+
+    void bubbleSortDown(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (array[j] > array[j - 1]) {
+                    int sort = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = sort;
+                }
+            }
+        }
+        for (int sort : array)
+
+            System.out.print(sort + " ");
+        System.out.println();
+
+    }
+
+    void bubbleSortUp(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (array[j] < array[j - 1]) {
+                    int sort = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = sort;
+                }
+            }
+        }
+        for (int sort : array)
+
+            System.out.print(sort + " ");
+        System.out.println();
+
+    }
+
+}
