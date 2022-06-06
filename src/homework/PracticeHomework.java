@@ -2,7 +2,7 @@ package homework;
 
 public class PracticeHomework {
     long convert(int minutes) {
-        minutes *= 60;
+        minutes *= 60L;
         return minutes;
     }
 
@@ -19,11 +19,7 @@ public class PracticeHomework {
     }
 
     boolean isSameNum(int a, int b) {
-        if (a == b) {
-            return true;
-        } else {
-            return false;
-        }
+        return a == b;
     }
 
     boolean lessThenOrEqualToZero(int number) {
@@ -43,13 +39,10 @@ public class PracticeHomework {
         }
     }
 
-    int x = 0;
-    int y = 0;
+
 
     int maxLength(int[] array1, int[] array2) {
-        array1 = new int[x];
-        array2 = new int[y];
-        if (x > y) {
+        if (array1.length > array2.length) {
             return array1.length;
 
         } else {
