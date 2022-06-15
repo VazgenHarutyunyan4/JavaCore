@@ -12,7 +12,8 @@ public class BraceChecker {
 
     void check() {
         for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+            char c = s.charAt(
+                    i);
             switch (c) {
                 case '(':
                 case '{':
