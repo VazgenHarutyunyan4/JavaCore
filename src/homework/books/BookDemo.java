@@ -16,9 +16,9 @@ public class BookDemo implements Commands {
             System.out.println("please input " + EXIT + " for exit");
             System.out.println("please input " + ADD_BOOK + " for adding book");
             System.out.println("please input " + PRINT_ALL_BOOKS + " for printing all books");
-            System.out.println("please input " + PRINT_BOOKS_BY_AUTHOR_NAME + " for printing this Author's books");
             System.out.println("please input " + PRINT_BOOKS_BY_GENRE + " for printing this genre's books");
             System.out.println("please input "+ PRINT_BOOKS_BY_PRICE_RANGE+" for printing this range price books");
+            System.out.println("please input "+ WHO_IS_AUTHOR+" for choosing author");
 
             int command = Integer.parseInt(scanner.nextLine());
 
@@ -32,19 +32,30 @@ public class BookDemo implements Commands {
                 case PRINT_ALL_BOOKS:
                     bookStorage.print();
                     break;
-                case PRINT_BOOKS_BY_AUTHOR_NAME:
-                    bookStorage.printByAuthor(scanner.nextLine());
-                    break;
                 case PRINT_BOOKS_BY_GENRE:
                     bookStorage.printBooksByGenre(scanner.nextLine());
                     break;
                 case PRINT_BOOKS_BY_PRICE_RANGE:
                    printBooksByPriceRange();
                     break;
+                case WHO_IS_AUTHOR:
+                    inputAuthorData();
+                    break;
             }
 
 
         }
+    }
+
+    private static void inputAuthorData() {
+        System.out.println("please input author's name");
+        String authorName = scanner.nextLine();
+        System.out.println("please input author's surname");
+        String authorSurname = scanner.nextLine();
+        System.out.println("please input author's email");
+        String authorEmail = scanner.nextLine();
+        System.out.println("please input author's gender (male or female ");
+        String gender = scanner.nextLine();
     }
 
     private static void printBooksByPriceRange() {
@@ -60,7 +71,7 @@ public class BookDemo implements Commands {
         System.out.println("please input book's title");
         String title = scanner.nextLine();
         System.out.println("please input author's name");
-        String authorName = scanner.nextLine();
+        String author = scanner.nextLine();
         System.out.println("please input book's price");
         String priceStr = scanner.nextLine();
         System.out.println("please input books count");

@@ -1,21 +1,29 @@
 package homework.books;
 
-public class Book {
+public class Book extends Author {
     private String title;
-    private String authorName;
     private double price;
     private int count;
     private String genre;
+    private Author author;
 
-    public Book(String title, String authorName, double price, int count, String genre) {
+    public Book(String title, String authorName, double price, int count, String genre, Author author) {
         this.title = title;
-        this.authorName = authorName;
         this.price = price;
         this.count = count;
         this.genre = genre;
+        this.author = author;
     }
 
     public Book() {
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public String getTitle() {
@@ -26,13 +34,6 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthorName() {
-        return authorName;
-    }
-
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
-    }
 
     public double getPrice() {
         return price;
@@ -62,12 +63,14 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "title='" + title + '\'' +
-                ", authorName='" + authorName + '\'' +
                 ", price=" + price +
                 ", count=" + count +
                 ", genre='" + genre + '\'' +
+                ", author=" + author +
                 '}';
     }
+
+
 }
 
 
