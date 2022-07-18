@@ -4,6 +4,21 @@ public class DynamicArray {
     private int[] array = new int[10];
     private int size = 0;
 
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
 
     public void add(int value) {
         if (size == array.length) {
@@ -65,12 +80,15 @@ public class DynamicArray {
         return value;
     }
 
-    public int delete(int index) {
-        for (int i = index + 1; i < array.length; i++) {
-            array[i - 1] = array[i];
+    public int deleteByIndex(int index) {
+        if (index < 0 || index >= size) {
+            System.out.println("invalid index");
+        } else {
+            for (int i = index; i < size; i++) {
+                array[i] = array[i + 1];
+            }
+            size--;
         }
-        size--;
-        return size;
+        return index;
     }
-
 }

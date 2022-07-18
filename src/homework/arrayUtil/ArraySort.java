@@ -1,4 +1,4 @@
-/*
+package homework.arrayUtil;/*
 package homework.arrayUtil;
 
 public class ArraySort {

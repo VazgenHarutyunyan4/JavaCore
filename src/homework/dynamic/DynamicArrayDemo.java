@@ -29,6 +29,6 @@ public class DynamicArrayDemo {
         System.out.println();
         System.out.println(dynamicArray.add1(5,25));
         System.out.println();
-        System.out.println(dynamicArray.delete(5));
+        System.out.println(dynamicArray.deleteByIndex(3));
     }
 }
