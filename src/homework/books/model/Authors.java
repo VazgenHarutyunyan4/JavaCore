@@ -1,20 +1,20 @@
-package homework.books;
+package homework.books.model;
 
-public class Author {
+import homework.books.bookEnum.Gender;
+
+public class Authors {
     private String name;
     private String surname;
     private String email;
     private String gender;
 
-    public Author(String name, String surname, String email, String gender) {
+    public Authors(String name, String surname, String email, String gender) {
         this.name = name;
         this.surname = surname;
         this.email = email;
-        this.gender = gender;
+        this.gender = getGender();
     }
 
-    public Author() {
-    }
 
     public String getName() {
         return name;
@@ -50,7 +50,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
+        return "Authors{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +

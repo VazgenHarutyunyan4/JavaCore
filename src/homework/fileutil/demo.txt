@@ -1,0 +1,4 @@
+Hello from Java!
+
+C:\JavaCore\src\homework\fileutil\demo.txt
+C:\JavaCore\src\homework\fileutil
