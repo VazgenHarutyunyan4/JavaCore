@@ -9,7 +9,7 @@ import java.util.Collections;
 public class CollectionExample {
 
     public static void main(String[] args) {
-        //String[] values = {"Sanasar","Baxtasar"};
+        String[] values = {"Sanasar","Baxtasar"};
         List<String> list = new ArrayList<>();
         list.add(0, "Aram");
         list.add(1, "Bob");
@@ -18,25 +18,26 @@ public class CollectionExample {
         list.add(4, "Bob");
         list.add(5, "Pol");
         list.add(6, "Lol");
-        //System.out.println(list);
-        //System.out.println(arrayToList(values));
+        list.add(7,"Aram");
+        System.out.println(list);
+        System.out.println(arrayToList(values));
 
-        //System.out.println(removeById(list,2));
-        //System.out.println(listToSet(list));
-        //Integer[] list = {5,8,97,854,1,0};
-        //System.out.println(listToLinkedList(list));
+        System.out.println(removeById(list,2));
+        System.out.println(listToSet(list));
+        Integer[] list1 = {5,8,97,854,1,0};
+        System.out.println(listToLinkedList(list1));
 
-        //System.out.println(Arrays.asList(reverseNumbers(list)));
+        System.out.println(Arrays.asList(reverseNumbers(list1)));
         printFirstFive(list);
-        //System.out.println(sizeOfList(list));
+        System.out.println(sizeOfList(list));
 
     }
 
     //մեթոդը գրել այնպես, որ կանչենք, ու իրան ստրինգների մասիվ տանք, ինքը վերադարձնի նույն էլեմենտներով ArrayList
     static List<String> arrayToList(String[] values) {
 
-        List<String> stringList = new ArrayList<>(Arrays.asList(values));
-        return stringList;
+
+        return new ArrayList<>(Arrays.asList(values));
     }
 
     //մեթոդը գրել այնպես, որ կանչենք ու տանք ինչ որ լիստ, ու ինդեքս, ինքը ջնջե էդ ինդեքսի տակ գտնվող էլեմենտը, ու վերադարձնե նույն լիստը, առանց էդ էլեմենտի։
@@ -54,8 +55,7 @@ public class CollectionExample {
 
     // մեթոդը գրել այնպես, որ ընդունի ցանկացած Integer-ների լիստ, վերադարձնի նույն արժեքներով LinkedList-ի օբյեկտ։
     static List<Integer> listToLinkedList(Integer[] list) {
-        LinkedList<Integer> linkedList = new LinkedList<Integer>(Arrays.asList(list));
-        return linkedList;
+        return new LinkedList<>(Arrays.asList(list));
     }
 
     // մեթոդը գրել այնպես, որ ընդունի ցանկացած Integer-ների լիստ, վերադարձնի նոր լիստ, որի մեջ էլեմենտները կլինեն հակառակ հերթականությամբ։
@@ -73,9 +73,7 @@ public class CollectionExample {
 
     // մեթոդը գրել այնպես, որ ինչ list տանք վերադարձնի թե քանի էլեմենտ կա էդ լիստ-ի մեջ
     static int sizeOfList(List<String> list) {
-        for (int i = 0; i < list.size(); i++) {
 
-        }
         return list.size();
     }
 

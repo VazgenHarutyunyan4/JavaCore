@@ -1,6 +1,9 @@
 package homework.collection;
 
 
+import book.chapter8.A;
+import homework.arrayUtil.ArrayUtil;
+
 import java.util.*;
 
 public class MapExample {
@@ -13,6 +16,13 @@ public class MapExample {
 
     public static void main(String[] args) {
 
+        List<FootballTeamMember> members = new ArrayList<>();
+        members.add(new FootballTeamMember(5,"Zidan"));
+        members.add(new FootballTeamMember(7,"Pele"));
+        members.add(new FootballTeamMember(9,"Poxos"));
+        members.add(new FootballTeamMember(11,"Baxtasar"));
+        members.add(new FootballTeamMember(1,"Kan"));
+
         Map<Integer, String> member = new HashMap<>();
 
         member.put(5, "Zidan");
@@ -21,6 +31,9 @@ public class MapExample {
         member.put(11, "Baxtasar");
         member.put(1, "Kan");
 
+        System.out.println("HashMap key and value");
+        System.out.println(createFootballTeam(members));
+        System.out.println("__________________________");
         System.out.println("Print all members names");
         printAllMemberNames(member);
         System.out.println("_________________________");
@@ -35,22 +48,21 @@ public class MapExample {
     }
 
     //Ունենք FootballTeamMember-ի լիստ, պետք է ստանանք HashMap որտեղ կեյ-ը կլինի խաղացողի համարը, իսկ վելյուն իրա անունը։
-    static Map<Integer, String> createFootballTeam(List<FootballTeamMember> members) {
 
-        return null;
+    static Map<Integer, String> createFootballTeam(List<FootballTeamMember> members) {
+        Map<Integer,String> map = new HashMap<>();
+        for (FootballTeamMember member:members) {
+            map.put(member.getNumber(),member.getName());
+        }
+        return map;
     }
 
     //Մեթոդի մեջ պետք է տրված մապ-ից ջնջենք removedNumber համարը եթե կա, ու վերադարձնենք true, եթե չկա վերադարձնենք false
     static boolean removeFromMap(Map<Integer, String> memberMap, Integer removedNumber) {
 
-        for (Integer integer : memberMap.keySet()) {
-            boolean b = memberMap.containsKey(removedNumber);
-            if (b) {
-                memberMap.remove(integer);
-                return true;
-            }
-        }
-
+       if (memberMap.containsKey(removedNumber)){
+           memberMap.remove(removedNumber);
+       }
             return false;
         }
 
